@@ -9,3 +9,5 @@ spring:
           uri: lb://order-service
           predicates:
             - Path=/orders/**
+          filters:
+            - StripPrefix=1
