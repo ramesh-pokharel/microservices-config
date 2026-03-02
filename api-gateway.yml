@@ -6,8 +6,6 @@ spring:
     gateway:
       routes:
         - id: order
-          uri: lb://order-service
+          uri: http://localhost:8082
           predicates:
             - Path=/orders/**
-          filters:
-            - StripPrefix=1
