@@ -4,12 +4,15 @@ server:
 spring:
   cloud:
     gateway:
-      routes:
-        - id: PRODUCT-SERVICE
-          uri: lb://product-service
-          predicates:
-            - Path=/products/**
-        - id: ORDER-SERVICE
-          uri: lb://order-service
-          predicates:
-            - Path=/orders/**
+      mvc:
+        path-matching:
+          case-sensitive: false
+        routes:
+          - id: PRODUCT-SERVICE
+            uri: lb://product-service
+            predicates:
+              - Path=/products/**
+          - id: ORDER-SERVICE
+            uri: lb://order-service
+            predicates:
+              - Path=/orders/**
