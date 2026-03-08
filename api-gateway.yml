@@ -5,8 +5,6 @@ spring:
   cloud:
     gateway:
       mvc:
-        path-matching:
-          case-sensitive: false
         routes:
           - id: PRODUCT-SERVICE
             uri: lb://product-service
