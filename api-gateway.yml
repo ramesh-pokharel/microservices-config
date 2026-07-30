@@ -4,13 +4,14 @@ server:
 spring:
   cloud:
     gateway:
-     # mvc:
-      routes:
-        - id: PRODUCT-SERVICE
-          uri: lb://product-service
-          predicates:
-            - Path=/products/**
-        - id: ORDER-SERVICE
-          uri: lb://order-service
-          predicates:
-            - Path=/orders/**
+      server:
+        webflux:
+          routes:
+            - id: PRODUCT-SERVICE
+              uri: lb://product-service
+              predicates:
+                - Path=/products/**
+            - id: ORDER-SERVICE
+              uri: lb://order-service
+              predicates:
+                - Path=/orders/**
