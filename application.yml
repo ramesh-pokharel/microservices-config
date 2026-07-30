@@ -1,9 +1,9 @@
 #shared defaults for all services
 
 eureka:
-  instance:
-    prefer-ip-address: false
-    hostname: localhost
+  #instance:
+   # prefer-ip-address: false
+    #hostname: localhost
   client:
     register-with-eureka: true
     fetch-registry: true
